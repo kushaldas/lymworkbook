@@ -15,19 +15,19 @@ First you will have to install the tool.
 vagrant up
 vagrant ssh
 cd lymworkbook
-python setup.py install
+sudo python setup.py install
 ```
 
-Next, to create any of the problems, type `lymsetup PROMBLEM_NUMBER` command.
+Next, to create any of the problems, type `sudo lymsetup PROMBLEM_NAME` command.
 
 ```
-lymsetup 1
+sudo lymsetup copypaste
 ```
 
-To verify your work, type `lymverify PROBLEM_NUMBER` command.
+To verify your work, type `sudo lymverify PROBLEM_NAME` command.
 
 ```
-lymverify 1
+sudo lymverify copypaste
 ```
 
 If you managed to solve the problem, you will see the following output.

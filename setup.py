@@ -8,7 +8,7 @@ setuptools.setup(
     description="Work book for LYM",
     license="GPLv3+",
     url="https://github.com/kushaldas/lymworkbook",
-    packages=["lymworkbook"],
+    packages=["lymworkbook", "lymproblems"],
     include_package_data=True,
     classifiers=(
         "Development Status :: 3 - Alpha",
