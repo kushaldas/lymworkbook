@@ -56,6 +56,8 @@ def setup():
 def verify():
     "Verify problemname"
     pass
+    # if everything okay, then
+    success()
 
 ```
 
