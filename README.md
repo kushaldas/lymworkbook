@@ -37,4 +37,29 @@ Success. Now try next problem."
 ```
 
 
+## Template of a new problem
+
+```Python
+
+# A small paragraph explaining the problem.
+# This has to be update if there is any change in the
+# problem statement.
+
+import os
+import sys
+from .utils import system, success
+
+def setup():
+    "Setup problemname"
+    pass  # Nothing to do.
+
+def verify():
+    "Verify problemname"
+    pass
+
+```
+
+Fill in the `setup` and `verify` functions.
+
+
 ## License: GPLv3+
