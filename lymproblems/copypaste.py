@@ -6,7 +6,7 @@
 
 import os
 import sys
-from .utils import system
+from .utils import system, success
 
 def setup():
     "Setup problem 1"
@@ -32,4 +32,4 @@ def verify():
             print("hello.txt is corrupted or has wrong data.")
             sys.exit(1)
 
-    print("\nSuccess. Now try next problem.")
+    success()

@@ -12,3 +12,6 @@ def system(cmd):
     out, err = ret.communicate() # type: str, str
     returncode = ret.returncode
     return out, err, returncode
+
+def success():
+    print("\nSuccess. Now try next problem.")
