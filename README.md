@@ -42,7 +42,7 @@ Success. Now try next problem."
 ```Python
 
 # A small paragraph explaining the problem.
-# This has to be update if there is any change in the
+# This has to be updated if there is any change in the
 # problem statement.
 
 import os
