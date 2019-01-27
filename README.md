@@ -47,7 +47,7 @@ Success. Now try next problem."
 
 import os
 import sys
-from .utils import system, success
+from .utils import system, success, find_path_data
 
 def setup():
     "Setup problemname"
