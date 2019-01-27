@@ -1,4 +1,5 @@
 import os
+import sys
 import subprocess
 
 def system(cmd):
@@ -15,3 +16,14 @@ def system(cmd):
 
 def success():
     print("\nSuccess. Now try next problem.")
+
+
+def find_path_data(path):
+    "First verify that the path exists, and then return the data"
+    if not os.path.exists(path):
+        print("Missing: {0}".format(path))
+        sys.exit(1)
+
+    with open(path) as fobj:
+        data = fobj.read()
+    return data
