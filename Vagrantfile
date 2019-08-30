@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "centos/7"
+  config.ssh.insert_key = false
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -54,7 +55,7 @@ Vagrant.configure("2") do |config|
   
   #   # Customize the amount of memory on the VM:
     vb.memory = "1024"
-    override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.  box"
+    override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.box"
   end
   config.vm.provider "libvirt" do |lv, override|
      # Customize the amount of memory on the VM:
@@ -68,9 +69,37 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  config.vm.provision "shell", inline: <<-SHELL
-    yum install git epel-release python-setuptools -y
-    git clone https://github.com/kushaldas/lymworkbook.git
 
-  SHELL
+
+  config.vm.define 'workbook' do |workbook|
+    workbook.vm.hostname = "workbook"
+    workbook.vm.provider "virtualbox" do |v, override|
+      v.memory = 512
+      override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.box"
+    end
+    workbook.vm.provider "libvirt" do |lv, override|
+      # Customize the amount of memory on the VM:
+      lv.memory = "512"
+      override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.Libvirt.box"
+   end
+   workbook.vm.provision "shell", inline: <<-SHELL
+   yum install git epel-release python-setuptools -y
+   git clone https://github.com/kushaldas/lymworkbook.git
+
+ SHELL
+  end
+
+
+  config.vm.define 'webserver' do |webserver|
+    webserver.vm.hostname = "app-webserver"
+    webserver.vm.provider "virtualbox" do |v, override|
+      v.memory = 512
+      override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.box"
+    end
+    webserver.vm.provider "libvirt" do |lv, override|
+      # Customize the amount of memory on the VM:
+      lv.memory = "512"
+      override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.Libvirt.box"
+   end
+  end
 end
