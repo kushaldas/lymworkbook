@@ -13,7 +13,7 @@ First you will have to install the tool.
 
 ```
 vagrant up
-vagrant ssh
+vagrant ssh workbook
 cd lymworkbook
 sudo python setup.py install
 ```
