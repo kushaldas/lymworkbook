@@ -5,7 +5,7 @@
 
 import os
 import sys
-from .utils import system, success
+from .utils import system, success, fail
 
 def setup():
     "Setup softlinks"
@@ -14,22 +14,18 @@ def setup():
 def verify():
     docs = "/home/vagrant/docs"
     if not os.path.exists(docs):
-        print("docs softlink is missing")
-        sys.exit(1)
+        fail("docs softlink is missing")
 
     path = os.readlink(docs)
     if path != "/usr/share/doc":
-        print("Not a correct symlink in docs")
-        sys.exit(1)
+        fail("Not a correct symlink in docs")
 
     memory = "/home/vagrant/memory"
     if not os.path.exists(memory):
-        print("memory softlink is missing")
-        sys.exit(1)
+        fail("memory softlink is missing")
 
     path = os.readlink(memory)
     if path != "/proc/meminfo":
-        print("Not a correct symlink in memory")
-        sys.exit(1)
+        fail("Not a correct symlink in memory")
 
     success()

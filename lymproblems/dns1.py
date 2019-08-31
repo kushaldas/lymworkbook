@@ -2,7 +2,7 @@
 
 import os
 import sys
-from .utils import system, success, failure
+from .utils import system, success, fail
 
 def setup():
     "Setup dns1"
@@ -22,6 +22,6 @@ def verify():
                 success()
     
 
-    failure("Can not find correct DNS entry")
+    fail("Can not find correct DNS entry")
     
     

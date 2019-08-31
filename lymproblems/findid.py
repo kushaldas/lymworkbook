@@ -2,7 +2,7 @@
 
 import os
 import sys
-from .utils import system, success, find_path_data
+from .utils import system, success, fail, find_path_data
 
 def setup():
     "Setup findid"
@@ -12,7 +12,6 @@ def verify():
     "Verify findid"
     data = find_path_data('/tmp/myuserid.txt')
     if data.strip() != "1000":
-        print("Your standard vagrant user id is supposed to be 1000.")
-        sys.exit(1)
+        fail("Your standard vagrant user id is supposed to be 1000.")
     # if everything okay, then
     success()

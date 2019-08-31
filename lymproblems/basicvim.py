@@ -3,7 +3,7 @@
 
 import os
 import sys
-from .utils import system, success
+from .utils import system, success, fail
 
 def setup():
     "Setup basicvim"
@@ -13,12 +13,12 @@ def verify():
     "Verify basicvim"
     filename = '/tmp/id_like.txt'
     if not os.path.exists(filename):
-        print("Output file is missing.")
-        sys.exit(1)
+        fail("Output file is missing.")
+
     with open(filename) as fobj:
         data = fobj.read()
 
     if "rhel fedora" != data.strip():
-        print("Wrong data in the output file.")
-        sys.exit(1)
+        fail("Wrong data in the output file.")
+
     success()

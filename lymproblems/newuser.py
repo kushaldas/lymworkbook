@@ -3,7 +3,7 @@
 
 import os
 import sys
-from .utils import system, success, find_path_data
+from .utils import system, success, fail, find_path_data
 
 def setup():
     "Setup newuser"
@@ -19,7 +19,6 @@ def verify():
             flag = True
     
     if not flag:
-        print("Missing user fatima.")
-        sys.exit(1)
+        fail("Missing user fatima.")
     # if everything okay, then
     success()

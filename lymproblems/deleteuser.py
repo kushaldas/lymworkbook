@@ -2,7 +2,7 @@
 
 import os
 import sys
-from .utils import system, success, find_path_data
+from .utils import system, success, fail, find_path_data
 
 def setup():
     "Setup problemname"
@@ -18,7 +18,6 @@ def verify():
             flag = True
     
     if flag:
-        print("User fatima is still there.")
-        sys.exit(1)
+        fail("User fatima is still there.")
     # if everything okay, then
     success()

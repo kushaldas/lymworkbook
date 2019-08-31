@@ -18,7 +18,7 @@ def success():
     print("\n\033[92mSuccess. Now try next problem.\033[0m")
     sys.exit(0)
 
-def failure(msg="Failed"):
+def fail(msg="Failed"):
     print("\033[91m{}\033[0m".format(msg))
     sys.exit(1)
 

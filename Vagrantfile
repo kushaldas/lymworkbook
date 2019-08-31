@@ -73,6 +73,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define 'workbook' do |workbook|
     workbook.vm.hostname = "workbook"
+    workbook.vm.synced_folder './', '/vagrant'
     workbook.vm.provider "virtualbox" do |v, override|
       v.memory = 512
       override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.box"
@@ -84,7 +85,7 @@ Vagrant.configure("2") do |config|
    end
    workbook.vm.provision "shell", inline: <<-SHELL
    yum install git epel-release python-setuptools -y
-   git clone https://github.com/kushaldas/lymworkbook.git
+   # git clone https://github.com/kushaldas/lymworkbook.git
 
  SHELL
   end

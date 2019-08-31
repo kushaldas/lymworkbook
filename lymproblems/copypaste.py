@@ -6,7 +6,7 @@
 
 import os
 import sys
-from .utils import system, success
+from .utils import system, success, fail
 
 def setup():
     "Setup problem 1"
@@ -19,17 +19,16 @@ def setup():
 def verify():
     "verify problem 1"
     if os.path.exists("/tmp/problem1/work/files/hello.txt"):
-        print("/tmp/problem1/work/files/hello.txt still exits.")
-        sys.exit(1)
+        fail("/tmp/problem1/work/files/hello.txt still exits.")
+
 
     if not os.path.exists("/home/vagrant/work/hello.txt"):
-        print("hello.txt is missing from the work directory in your home.")
-        sys.exit(1)
+        fail("hello.txt is missing from the work directory in your home.")
+
 
     with open("/home/vagrant/work/hello.txt") as fobj:
         data = fobj.read()
         if not data == "Hello user.":
-            print("hello.txt is corrupted or has wrong data.")
-            sys.exit(1)
+            fail("hello.txt is corrupted or has wrong data.")
 
     success()
