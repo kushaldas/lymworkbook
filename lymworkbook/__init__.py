@@ -2,6 +2,7 @@ import os
 import sys
 import importlib
 
+
 def find_module():
     if len(sys.argv) != 2:
         print("Missing problem name.")
@@ -16,6 +17,7 @@ def find_module():
         print("Please check for any typo in the problem name.")
         sys.exit(1)
     return module
+
 
 def workbook_setup():
     module = find_module()

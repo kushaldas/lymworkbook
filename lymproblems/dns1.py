@@ -4,14 +4,16 @@ import os
 import sys
 from .utils import system, success, fail
 
+
 def setup():
     "Setup dns1"
     pass  # Nothing to do.
 
+
 def verify():
     "Verify dns1"
     data = ""
-    with open('/etc/resolv.conf') as f:
+    with open("/etc/resolv.conf") as f:
         data = f.readlines()
 
     for line in data:
@@ -20,8 +22,5 @@ def verify():
         if len(words) == 2:
             if words[0] == "nameserver" and words[1] == "1.1.1.1":
                 success()
-    
 
     fail("Can not find correct DNS entry")
-    
-    

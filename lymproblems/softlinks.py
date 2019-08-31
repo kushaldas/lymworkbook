@@ -7,9 +7,11 @@ import os
 import sys
 from .utils import system, success, fail
 
+
 def setup():
     "Setup softlinks"
     pass  # Nothing to do.
+
 
 def verify():
     docs = "/home/vagrant/docs"

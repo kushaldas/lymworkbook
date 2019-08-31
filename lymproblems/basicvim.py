@@ -5,13 +5,15 @@ import os
 import sys
 from .utils import system, success, fail
 
+
 def setup():
     "Setup basicvim"
     pass  # Nothing to do.
 
+
 def verify():
     "Verify basicvim"
-    filename = '/tmp/id_like.txt'
+    filename = "/tmp/id_like.txt"
     if not os.path.exists(filename):
         fail("Output file is missing.")
 

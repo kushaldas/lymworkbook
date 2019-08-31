@@ -19,9 +19,9 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ),
     entry_points={
-        'console_scripts': [
-            'lymsetup = lymworkbook:workbook_setup',
-            'lymverify = lymworkbook:workbook_verify',
-        ],
+        "console_scripts": [
+            "lymsetup = lymworkbook:workbook_setup",
+            "lymverify = lymworkbook:workbook_verify",
+        ]
     },
 )
