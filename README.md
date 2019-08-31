@@ -47,7 +47,7 @@ Success. Now try next problem."
 
 import os
 import sys
-from .utils import system, success, find_path_data
+from .utils import system, success, failure find_path_data
 
 def setup():
     "Setup problemname"
@@ -58,10 +58,11 @@ def verify():
     pass
     # if everything okay, then
     success()
+    # If something is not correct then
+    failure("You failed to setup xyz")
 
 ```
 
 Fill in the `setup` and `verify` functions.
-
 
 ## License: GPLv3+
