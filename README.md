@@ -63,6 +63,7 @@ def verify():
 
 ```
 
-Fill in the `setup` and `verify` functions.
+Fill in the `setup` and `verify` functions. Remember to use
+[black](https://pypi.org/project/black/) on the code before you submit a PR.
 
 ## License: GPLv3+
