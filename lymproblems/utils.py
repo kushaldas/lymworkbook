@@ -15,8 +15,12 @@ def system(cmd):
     return out, err, returncode
 
 def success():
-    print("\nSuccess. Now try next problem.")
+    print("\n\033[92mSuccess. Now try next problem.\033[0m")
+    sys.exit(0)
 
+def failure(msg="Failed"):
+    print("\033[91m{}\033[0m".format(msg))
+    sys.exit(1)
 
 def find_path_data(path):
     "First verify that the path exists, and then return the data"
