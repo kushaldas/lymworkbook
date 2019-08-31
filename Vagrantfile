@@ -85,7 +85,7 @@ Vagrant.configure("2") do |config|
    end
    workbook.vm.provision "shell", inline: <<-SHELL
    yum install git epel-release python-setuptools -y
-   # git clone https://github.com/kushaldas/lymworkbook.git
+   git clone https://github.com/kushaldas/lymworkbook.git
 
  SHELL
   end
