@@ -1,8 +1,5 @@
-"""
-Problem: 
-1. Check if the /tmp/ip_dgplug.txt exits or not (if not found provide a feedback to the user).
-2. Read the file and match if it is same of the ip_address you calculated below.
-"""
+# Find the IP address of dgplug.org and save it to /tmp/ip_dgplug.txt file.
+
 import os
 import sys
 import socket
@@ -16,13 +13,12 @@ def verify():
     try:
         "Verify find_ip"
         site_url="dgplug.org"
-        
         # Check for file "ip_dgplug.txt" in "/tmp" directory.
         data = find_path_data("/tmp/ip_dgplug.txt")
 
         # Compare the ip address obtained with data.
         if data.strip()!=socket.gethostbyname(site_url):
-            fail("The ip address is not same.")
+            fail("The IP address is not same.")
         success()
 
     except socket.gaierror:
