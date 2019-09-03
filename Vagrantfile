@@ -84,7 +84,7 @@ Vagrant.configure("2") do |config|
       override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.Libvirt.box"
    end
    workbook.vm.provision "shell", inline: <<-SHELL
-   yum install git epel-release python-setuptools -y
+   yum install git epel-release python-setuptools python-paramiko -y
    git clone https://github.com/kushaldas/lymworkbook.git
    cd lymworkbook; sudo python setup.py install
 

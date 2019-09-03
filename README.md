@@ -9,13 +9,11 @@ the vm from your normal work computer. Also, this user should be able to do `sud
 
 ## How to use the tool?
 
-First you will have to install the tool.
+First you will get the vm ready..
 
 ```
 vagrant up
 vagrant ssh workbook
-cd lymworkbook
-sudo python setup.py install
 ```
 
 Next, to create any of the problems, type `sudo lymsetup PROMBLEM_NAME` command.
