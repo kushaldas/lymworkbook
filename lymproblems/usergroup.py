@@ -13,7 +13,7 @@ def setup():
 def verify():
     "Verify usergroup"
     flag = False
-    with open('/etc/group') as fobj:
+    with open("/etc/group") as fobj:
         for line in fobj:
             if line.startswith("wheel"):
                 if line.find(":powerful") != -1:
