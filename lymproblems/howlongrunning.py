@@ -6,12 +6,12 @@ from .utils import system, success, fail
 
 
 def setup():
-    "Setup dns1"
+    "Setup howlongrunning"
     pass  # Nothing to do.
 
 
 def verify():
-    "Verify dns1"
+    "Verify howlongrunning"
     cmd = raw_input("Enter the command: ")
     cmd = cmd.strip()
     if cmd == "uptime":
