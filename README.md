@@ -9,7 +9,7 @@ the vm from your normal work computer. Also, this user should be able to do `sud
 
 ## How to use the tool?
 
-First you will get the vm ready..
+First you will get the vm ready.
 
 ```
 vagrant up
