@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "-"
+  #config.vm.box_url = "-"
   
 
 
@@ -51,17 +51,17 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  config.vm.provider "virtualbox" do |vb, override|
+  # config.vm.provider "virtualbox" do |vb, override|
   
-  #   # Customize the amount of memory on the VM:
-    vb.memory = "1024"
-    override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.box"
-  end
-  config.vm.provider "libvirt" do |lv, override|
-     # Customize the amount of memory on the VM:
-     lv.memory = "1024"
-     override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.Libvirt.box"
-  end
+  # #   # Customize the amount of memory on the VM:
+  #   vb.memory = "1024"
+  #   override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.box"
+  # end
+  # config.vm.provider "libvirt" do |lv, override|
+  #    # Customize the amount of memory on the VM:
+  #    lv.memory = "1024"
+  #    override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.Libvirt.box"
+  # end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
@@ -103,5 +103,20 @@ Vagrant.configure("2") do |config|
       lv.memory = "512"
       override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.Libvirt.box"
    end
+  end
+
+  config.vm.define 'spybox', autostart: false do |spybox|
+    spybox.vm.hostname = "spybox"
+    spybox.vm.box = "debian/buster64"
+    spybox.vm.box_version = "10.0.0"
+    spybox.vm.synced_folder './', '/vagrant', disabled: true
+    spybox.vm.provider "virtualbox" do |v, override|
+      v.memory = 512
+    end
+    spybox.vm.provider "libvirt" do |lv, override|
+      # Customize the amount of memory on the VM:
+      lv.memory = "512"
+   end
+
   end
 end
