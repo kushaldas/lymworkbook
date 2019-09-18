@@ -31,7 +31,7 @@ sudo lymverify copypaste
 If you managed to solve the problem, you will see the following output.
 
 ```
-Success. Now try next problem."
+Success. Now try next problem.
 ```
 
 
@@ -45,7 +45,7 @@ Success. Now try next problem."
 
 import os
 import sys
-from .utils import system, success, fail find_path_data
+from .utils import system, success, fail, find_path_data
 
 def setup():
     "Setup problemname"
