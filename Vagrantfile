@@ -92,7 +92,7 @@ Vagrant.configure("2") do |config|
   end
 
 
-  config.vm.define 'webserver' do |webserver|
+  config.vm.define 'webserver', autostart: false  do |webserver|
     webserver.vm.hostname = "app-webserver"
     webserver.vm.provider "virtualbox" do |v, override|
       v.memory = 512
