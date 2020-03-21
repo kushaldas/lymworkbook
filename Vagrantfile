@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "centos/7"
+  config.vm.box = "centos/8"
   config.ssh.insert_key = false
 
   # The url from where the 'config.vm.box' box will be fetched if it
@@ -76,17 +76,19 @@ Vagrant.configure("2") do |config|
     workbook.vm.synced_folder './', '/vagrant'
     workbook.vm.provider "virtualbox" do |v, override|
       v.memory = 512
-      override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.box"
+      override.vm.box_url = "https://cloud.centos.org/centos/8/vagrant/x86_64/images/CentOS-8-Vagrant-8.1.1911-20200113.3.x86_64.vagrant-virtualbox.box"
     end
     workbook.vm.provider "libvirt" do |lv, override|
       # Customize the amount of memory on the VM:
       lv.memory = "512"
-      override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.Libvirt.box"
+      override.vm.box_url = "https://cloud.centos.org/centos/8/vagrant/x86_64/images/CentOS-8-Vagrant-8.1.1911-20200113.3.x86_64.vagrant-libvirt.box"
    end
    workbook.vm.provision "shell", inline: <<-SHELL
-   yum install git epel-release python-setuptools python-paramiko -y
+   dnf install git epel-release python2-setuptools python2 -y
+   pip2 install paramiko
+   rm -rf lymworkbook
    git clone https://github.com/kushaldas/lymworkbook.git
-   cd lymworkbook; sudo python setup.py install
+   cd lymworkbook; sudo python2 setup.py install
 
  SHELL
   end
@@ -96,12 +98,12 @@ Vagrant.configure("2") do |config|
     webserver.vm.hostname = "app-webserver"
     webserver.vm.provider "virtualbox" do |v, override|
       v.memory = 512
-      override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.box"
+      override.vm.box_url = "https://cloud.centos.org/centos/8/vagrant/x86_64/images/CentOS-8-Vagrant-8.1.1911-20200113.3.x86_64.vagrant-virtualbox.box"
     end
     webserver.vm.provider "libvirt" do |lv, override|
       # Customize the amount of memory on the VM:
       lv.memory = "512"
-      override.vm.box_url = "https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7.Libvirt.box"
+      override.vm.box_url = "https://cloud.centos.org/centos/8/vagrant/x86_64/images/CentOS-8-Vagrant-8.1.1911-20200113.3.x86_64.vagrant-libvirt.box"
    end
   end
 

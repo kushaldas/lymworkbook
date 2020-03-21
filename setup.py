@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="lymworkbook",
-    version="0.0.1",
+    version="0.1.0",
     author="Kushal Das",
     author_email="mail@kushaldas.in",
     description="Work book for LYM",
@@ -11,7 +11,7 @@ setuptools.setup(
     packages=["lymworkbook", "lymproblems"],
     include_package_data=True,
     classifiers=(
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python :: 2",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
